@@ -1,0 +1,25 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+      
+
+{% for post in list %}
+     
+     
+     <div class="post">
+
+         <p> {{ post.name }} </p>
+         <p>{{post.pk}}</p>
+         <a href = {{ post.url_img   }}>url</a>
+         <div class = "date"><a class="btn btn-default" href="{% url 'comment_remove' pk=post.pk %}"><span class="glyphicon glyphicon-remove"></span></a></div>
+         <img src = {{ post.url_img   }} style="float:centre;width:100%;height:100%;object-fit:cover;>
+         
+     </div>
+
+{% endfor %}
+
+
+
+
+
+{% endblock %}
